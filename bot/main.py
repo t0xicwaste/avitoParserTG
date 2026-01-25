@@ -11,6 +11,8 @@ env_path = Path(__file__).parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 TOKEN = os.getenv("TOKEN")
+if TOKEN is None:
+    raise ValueError("Токен не найден! Проверьте файл .env")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
