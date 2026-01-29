@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 
 from aiogram import Bot, Dispatcher
+from db.connection import engine, flush_db
 from dotenv import load_dotenv
 from handlers.start import start_router
 from loguru import logger
