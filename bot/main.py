@@ -3,10 +3,12 @@ import os
 from pathlib import Path
 
 from aiogram import Bot, Dispatcher
-from db.connection import engine, flush_db
+
 from dotenv import load_dotenv
-from handlers.start import start_router
 from loguru import logger
+
+from db.connection import engine, flush_db
+from handlers.start import start_router
 
 env_path = Path(__file__).parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
@@ -17,6 +19,10 @@ if TOKEN is None:
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
+
+
+async def db_startup(dispatcher: Dispatcher):
+    await flush_db(engine=engine)
 
 
 async def main():
