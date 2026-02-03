@@ -27,6 +27,7 @@ async def db_startup(dispatcher: Dispatcher):
 
 async def main():
     dp.include_router(start_router)
+    await db_startup(dp)
     await dp.start_polling(bot)
 
 
