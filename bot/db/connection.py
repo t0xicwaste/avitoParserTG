@@ -6,6 +6,8 @@ from db.base import Base
 import os
 from dotenv import load_dotenv
 
+import db.models
+
 load_dotenv()
 
 url = URL.create(
