@@ -1,5 +1,4 @@
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy.orm.collections import MappedCollection
 from sqlalchemy.orm.properties import ForeignKey
 from sqlalchemy.types import JSON, BigInteger, VARCHAR, Boolean, Integer, DateTime, Text
 
